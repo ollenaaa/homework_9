@@ -26,7 +26,7 @@ def hello_user():
 
 @input_error
 def add_contact(name, phone):
-    if is_valid_phone_number(phone) and is_valid_name(name):
+    if is_valid_phone_number(phone) and is_valid_name(name) and name not in phone_book:
         phone_book[name] = phone
         return f"Contact {name} with phone number {phone} added successfully"
     else:
